@@ -28,6 +28,9 @@ class CustomerSerializer(serializers.Serializer):
         instance.timezone = validated_data.get('timezone', instance.timezone)
         return instance
 
+    class Meta:
+        model = Customer
+        fields = ('id', 'phone_number', 'operator_code', 'tag', 'timezone')
 
 class DistributionSerializer(serializers.Serializer):
     id = serializers.IntegerField(validators=[UniqueValidator(queryset=Distribution.objects.all())])
@@ -45,3 +48,7 @@ class DistributionSerializer(serializers.Serializer):
         instance.filter = validated_data.get('filter', instance.filter)
         instance.timer_end = validated_data.get('timer_end', instance.timer_end)
         return instance
+
+    class Meta:
+        model = Distribution
+        fields = ('id', 'timer', 'text', 'filter', 'timer_end')
