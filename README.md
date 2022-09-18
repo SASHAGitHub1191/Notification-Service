@@ -1,6 +1,6 @@
 # Notification_Service
 
-##Сервис управления рассылками API администрирования и получения статистики.
+Сервис управления рассылками API администрирования и получения статистики.
 
 ## Функции:
 
@@ -24,3 +24,7 @@
 - Запустить командой python manage.py runserver
 - Во втором терминале запустить Celery командой celery -A Notification_Service worker -l info
 - На вкладке /docs/ доступна документация Swagger UI по API
+
+## Возможные проблемы:
+
+-Если в Celery воркеры получают задачу, но не выполняют её, попробуйте запустить Celery через celery -A Notification_Service worker -l info -P eventlet
