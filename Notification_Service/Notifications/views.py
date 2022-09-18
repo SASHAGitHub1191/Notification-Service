@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Distribution, Customer, Message
 from .serializers import MessageSerializer, CustomerSerializer, DistributionSerializer
 from rest_framework import generics, views, response
+from rest_framework.generics import GenericAPIView
 
 
 class MessageApiView(generics.ListAPIView):
@@ -9,7 +10,8 @@ class MessageApiView(generics.ListAPIView):
     serializer_class = MessageSerializer
 
 
-class CustomerApiView(views.APIView):
+class CustomerApiView(GenericAPIView):
+    serializer_class = CustomerSerializer
     def get(self, request):
         lst = Customer.objects.all()
         return response.Response({'customers': CustomerSerializer(lst, many=True).data})
@@ -42,7 +44,8 @@ class CustomerApiView(views.APIView):
         return response.Response({'customers': str(customer_id) + ' deleted'})
 
 
-class DistributionApiView(views.APIView):
+class DistributionApiView(GenericAPIView):
+    serializer_class = DistributionSerializer
     def get(self, request):
         lst = Distribution.objects.all()
         return response.Response({'distributions': DistributionSerializer(lst, many=True).data})
