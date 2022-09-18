@@ -1,0 +1,21 @@
+{% extends 'Notifications/base.html' %}
+
+{% block head %}
+<th scope="col">ID</th>
+<th scope="col">Время начала рассылки</th>
+<th scope="col">Статус отправки</th>
+<th scope="col">ID рассылки</th>
+<th scope="col">ID клиента</th>
+{% endblock %}
+
+{% block table %}
+  {% for el in messages %}
+    <tr>
+      <td>{{ el.id }}</td>
+      <td>{{ el.sending_time }}</td>
+      <td>{{ el.sended_status }}</td>
+      <td>{{ el.distribution_id }}</td>
+      <td>{{ el.customer_id }}</td>
+    </tr>
+  {% endfor %}
+{% endblock %}

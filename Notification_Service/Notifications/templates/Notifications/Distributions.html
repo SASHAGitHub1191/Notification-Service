@@ -1,0 +1,21 @@
+{% extends 'Notifications/base.html' %}
+
+{% block head %}
+<th scope="col">ID</th>
+<th scope="col">Время начала рассылки</th>
+<th scope="col">Время окончания рассылки</th>
+<th scope="col">Фильтр рассылки</th>
+<th scope="col">Текст</th>
+{% endblock %}
+
+{% block table %}
+  {% for el in distributions %}
+    <tr>
+      <td>{{ el.id }}</td>
+      <td>{{ el.timer }}</td>
+      <td>{{ el.timer_end }}</td>
+      <td>{{ el.filter }}</td>
+      <td>{{ el.text }}</td>
+    </tr>
+  {% endfor %}
+{% endblock %}
