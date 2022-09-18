@@ -1,0 +1,19 @@
+{% extends 'Notifications/base.html' %}
+
+{% block head %}
+<th scope="col">ID</th>
+<th scope="col">Номер телефона</th>
+<th scope="col">Теги</th>
+<th scope="col">Часовой пояс</th>
+{% endblock %}
+
+{% block table %}
+  {% for el in customers %}
+    <tr>
+      <td>{{ el.id }}</td>
+      <td>{{ el.phone_number }}</td>
+      <td>{{ el.tag }}</td>
+      <td>{{ el.timezone }}</td>
+    </tr>
+  {% endfor %}
+{% endblock %}
