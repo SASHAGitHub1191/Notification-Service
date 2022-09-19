@@ -141,4 +141,4 @@ CELERY_ACCEPT_BACKEND = ['application.json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
-JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2ODgyMjgsImlzcyI6ImZhYnJpcXVlIiwibmFtZSI6ImlsdWFiMjEifQ.CVmgqI5h7PVymhHrlfWU-uFPvkilFK8A9vyaY_mk4aM'
+JWT = '<JWT Token>'
