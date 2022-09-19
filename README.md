@@ -21,6 +21,7 @@
 - Установить зависимости командой pip install -r requirements.txt
 - Установить Redis через докер docker run -d -p 6379:6379 redis
 - В файле settings.py установить порты для Redis в поля REDIS_HOST и REDIS_PORT
+- Настроить ваш JWT токен в settings.py
 - Запустить командой python manage.py runserver
 - Во втором терминале запустить Celery командой celery -A Notification_Service worker -l info
 - На вкладке /docs/ доступна документация Swagger UI по API
