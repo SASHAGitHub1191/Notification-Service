@@ -7,7 +7,7 @@ class Distribution(models.Model):
     id = models.BigAutoField(primary_key=True)
     timer = models.DateTimeField()
     text = models.TextField()
-    filter = models.CharField(max_length=255, blank=True)
+    filter = models.CharField(max_length=64, blank=True)
     timer_end = models.DateTimeField()
 
     def __str__(self):
